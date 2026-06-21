@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #020617; /* Deep Slate / Nordic Abyss */
+  --color-surface: #0f172a;
+  --color-accent: #38bdf8; /* Frost Cyan */
+  --color-muted: #94a3b8;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-background);
+  color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Subtle glowing grid */
+.nordic-grid {
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Snow Particle Animations */
+@keyframes snowfall {
+  0% { transform: translateY(-10vh) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
+}
+
+.snow-particle {
+  position: absolute;
+  top: -10px;
+  background: white;
+  border-radius: 50%;
+  animation: snowfall linear infinite;
+  filter: blur(1px);
+}
