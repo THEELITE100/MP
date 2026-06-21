@@ -141,7 +141,7 @@ const About = () => {
             className="flex justify-center"
           >
             <a 
-              href="https://drive.google.com/file/d/1IChvbAUH92Did3icpOAMNYgkHTj7T-Sr/view" 
+              href="https://drive.google.com/file/d/1OOpAILtQPaDymke2GnaaLG28rpq1FBEO/view" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group relative px-10 py-5 bg-[#020617] border border-sky-900/50 rounded-full overflow-hidden flex items-center gap-4 transition-all duration-500 hover:border-sky-400/80 hover:shadow-[0_0_40px_rgba(56,189,248,0.15)]"
