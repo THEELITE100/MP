@@ -1,66 +1,3 @@
-// import { motion } from 'framer-motion';
-
-
-
-// const About = () => {
-//   return (
-//     <section id="about" className="py-32 w-full px-6 border-t border-sky-900/20 bg-slate-900/20 backdrop-blur-sm">
-//       <div className="max-w-4xl mx-auto">
-//         <motion.div 
-//           initial={{ opacity: 0, y: 20 }}
-//           whileInView={{ opacity: 1, y: 0 }}
-//           viewport={{ once: true, margin: "-100px" }}
-//           transition={{ duration: 0.8 }}
-//         >
-//           <div className="flex items-center gap-4 mb-8">
-//             <div className="h-[1px] w-12 bg-sky-500/50" />
-//             <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Summary</h2>
-//           </div>
-          
-//           <div className="mb-16">
-//             <p className="text-lg text-slate-300 font-light leading-relaxed mb-6 text-justify">
-//               I am a Aspiring AI/ML Engineer with practical experience in full stack web development and applied machine learning. I have designed and developed scalable web applications, built high accuracy data extraction systems, and implemented machine learning and deep learning models for real world tasks.
-//             </p>
-//             <p className="text-lg text-slate-300 font-light leading-relaxed text-justify">
-//               I excel at backend optimization, algorithm design, and delivering data driven solutions, particularly in computer vision, document intelligence, and AI powered automation.
-//             </p>
-//           </div>
-
-//           <div className="grid md:grid-cols-3 gap-6">
-//             {skillCategories.map((category, idx) => (
-//               <motion.div 
-//                 key={idx}
-//                 initial={{ opacity: 0, y: 20 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 viewport={{ once: true }}
-//                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-//                 className="p-6 rounded-2xl bg-[#0f172a]/60 backdrop-blur-md border border-slate-800 hover:border-sky-500/40 transition-all duration-300 group"
-//               >
-//                 <h3 className="text-sky-400/80 font-medium tracking-widest mb-5 uppercase text-xs">
-//                   {category.title}
-//                 </h3>
-//                 <div className="flex flex-wrap gap-2.5">
-//                   {category.skills.map(tech => (
-//                     <span 
-//                       key={tech} 
-//                       className="px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/50 text-sky-100 text-sm tracking-wide group-hover:bg-slate-800 transition-colors duration-300"
-//                     >
-//                       {tech}
-//                     </span>
-//                   ))}
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </div>
-          
-//         </motion.div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;
-
 import { motion } from 'framer-motion';
 
 const skillCategories = [
@@ -94,7 +31,7 @@ const About = () => {
         >
           <div className="flex items-center gap-4 mb-8">
             <div className="h-[1px] w-12 bg-sky-500/50" />
-            <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Summary</h2>
+            <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">The Architect</h2>
           </div>
           
           <div className="mb-16">
@@ -149,7 +86,7 @@ const About = () => {
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-[200%] bg-gradient-to-r from-transparent via-sky-400/10 to-transparent transition-transform duration-[1.5s] ease-in-out" />
               
               <span className="relative text-sky-100 tracking-[0.25em] text-sm md:text-base uppercase font-medium">
-                Access Full Resume
+                Open the Codex
               </span>
               
               <svg 

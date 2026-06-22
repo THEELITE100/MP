@@ -50,7 +50,7 @@ const Projects = () => {
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center gap-4 mb-16">
           <div className="h-[1px] w-12 bg-sky-500/50" />
-          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Realm of Creation</h2>
         </div>
 
         <div className="flex flex-col gap-12">

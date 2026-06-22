@@ -9,7 +9,7 @@ const Hero = () => {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <p className="text-sky-400/80 tracking-[0.3em] text-sm md:text-base font-semibold uppercase mb-4">
-          Software Engineer
+          The Realm Gate
         </p>
         <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-500">
           Sumit Parashar
@@ -23,7 +23,7 @@ const Hero = () => {
           href="#projects"
           className="inline-block bg-sky-950/50 border border-sky-500/30 text-sky-100 px-10 py-4 rounded-full font-medium tracking-widest hover:bg-sky-900/60 transition-all duration-300"
         >
-          VIEW MORE
+          VIEW REALM
         </motion.a>
       </motion.div>
     </section>

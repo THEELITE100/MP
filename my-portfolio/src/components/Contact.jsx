@@ -10,7 +10,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-light tracking-widest text-sky-100 uppercase mb-8"
         >
-          Initiate Contact
+          Send a Raven
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0 }}

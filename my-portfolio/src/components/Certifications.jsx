@@ -13,7 +13,7 @@ const Certifications = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-12">
           <div className="h-[1px] w-12 bg-sky-500/50" />
-          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Relics of Knowledge</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-4">
