@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
 
 const projectData = [
+  { 
+    title: "Focus", 
+    date: "June 2026 – July 2026", 
+    tech: "React.js • Node.js • Express.js • MongoDB • Tailwind CSS", 
+    points: [ 
+      "Engineered a task management dashboard.", 
+      "Developed a robust Node.js and Express backend with a custom RESTful API to manage seamless data processing and CRUD operations.", 
+      "Integrated MongoDB for efficient database management, enabling dynamic state updates.",  
+    ] 
+  },
   {
     title: "AEO Diagnostic Engine",
     date: "April 2026 – May 2026",
