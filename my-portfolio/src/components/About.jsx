@@ -36,7 +36,7 @@ const About = () => {
           
           <div className="mb-16">
             <p className="text-lg text-slate-300 font-light leading-relaxed mb-6 text-justify">
-              I am a Aspiring AI/ML Engineer with practical experience in full stack web development and applied machine learning. I have designed and developed scalable web applications, built high accuracy data extraction systems, and implemented machine learning and deep learning models for real world tasks.
+              I am a Aspiring AI/ML Engineer with practical experience in full stack development and applied machine learning. I have designed and developed scalable web applications, built high accuracy data extraction systems, and implemented machine learning and deep learning models for real world tasks.
             </p>
             <p className="text-lg text-slate-300 font-light leading-relaxed text-justify">
               I excel at backend optimization, algorithm design, and delivering data driven solutions, particularly in computer vision, document intelligence, and AI powered automation.
@@ -78,7 +78,7 @@ const About = () => {
             className="flex justify-center"
           >
             <a 
-              href="https://drive.google.com/file/d/1OOpAILtQPaDymke2GnaaLG28rpq1FBEO/view" 
+              href="https://drive.google.com/file/d/1o1SZCqvm2p5ytFs8Y9ZpTVhj5i-59hxZ/view" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group relative px-10 py-5 bg-[#020617] border border-sky-900/50 rounded-full overflow-hidden flex items-center gap-4 transition-all duration-500 hover:border-sky-400/80 hover:shadow-[0_0_40px_rgba(56,189,248,0.15)]"

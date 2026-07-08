@@ -15,12 +15,12 @@ const Hero = () => {
           Sumit Parashar
         </h1>
         <p className="text-lg md:text-2xl text-slate-400 max-w-2xl mx-auto mb-10 font-light tracking-wide">
-          Full Stack Web Developer & AI/ML Engineer.
+          Full Stack Developer & AI/ML Engineer.
         </p>
         <motion.a 
           whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(56, 189, 248, 0.2)" }}
           whileTap={{ scale: 0.95 }}
-          href="#projects"
+          href="#experience"
           className="inline-block bg-sky-950/50 border border-sky-500/30 text-sky-100 px-10 py-4 rounded-full font-medium tracking-widest hover:bg-sky-900/60 transition-all duration-300"
         >
           VIEW REALM

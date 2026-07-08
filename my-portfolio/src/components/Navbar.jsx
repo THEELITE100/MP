@@ -9,6 +9,7 @@ const Navbar = () => {
         </a>
         <div className="hidden md:flex gap-8 text-slate-400">
           <a href="#about" className="hover:text-sky-300 transition-colors">ABOUT</a>
+          <a href="#experience" className="hover:text-sky-300 transition-colors">EXPERIENCE</a>
           <a href="#projects" className="hover:text-sky-300 transition-colors">PROJECTS</a>
           <a href="#certifications" className="hover:text-sky-300 transition-colors">CERTIFICATES</a>
           <a href="#contact" className="hover:text-sky-300 transition-colors">CONTACT</a>
