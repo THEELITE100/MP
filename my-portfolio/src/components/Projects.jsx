@@ -56,47 +56,44 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 w-full px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex items-center gap-4 mb-16">
-          <div className="h-[1px] w-12 bg-sky-500/50" />
-          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Realm of Creation</h2>
-        </div>
+    <section id="projects" className="py-32 w-full px-6 border-t border-sky-950/20 bg-slate-950/10">
+      <div className="max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-[1px] w-12 bg-sky-500/40" />
+            <h2 className="text-2xl md:text-3xl font-display tracking-widest text-sky-100 uppercase">Realm of Creation</h2>
+          </div>
 
-        <div className="flex flex-col gap-12">
-          {projectData.map((project, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-[#0f172a]/40 backdrop-blur-md rounded-2xl p-8 border border-slate-800 hover:border-sky-500/30 transition-all duration-500 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4">
-                  <h3 className="text-2xl font-medium text-sky-50 tracking-wide mb-2 md:mb-0">{project.title}</h3>
-                  <span className="font-mono text-sm text-sky-400/70 tracking-widest">{project.date}</span>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {projectData.map((proj, idx) => (
+              <div key={idx} className="p-6 rounded-xl bg-slate-900/40 border border-slate-800/80 hover:border-sky-500/20 transition-all duration-300 flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-lg font-medium text-slate-200">{proj.title}</h3>
+                    <span className="text-[10px] text-slate-500 whitespace-nowrap pt-1">{proj.date}</span>
+                  </div>                  
+                  <ul className="text-sm text-slate-400 font-light leading-relaxed mb-6 space-y-1.5 list-disc pl-4">
+                    {proj.points?.map((point, pIdx) => (
+                      <li key={pIdx}>{point}</li>
+                    ))}
+                  </ul>
                 </div>
-                
-                <div className="mb-6 inline-block px-3 py-1 bg-sky-950/50 border border-sky-800/50 rounded-md font-mono text-[11px] text-sky-200/70">
-                  {project.tech}
-                </div>
-
-                <ul className="space-y-3 text-slate-400 font-light leading-relaxed">
-                  {project.points.map((point, i) => (
-                    <li key={i} className="flex gap-3">
-                      <span className="text-sky-500/50 mt-1.5 text-xs">◆</span>
-                      <span>{point}</span>
-                    </li>
+                <div className="flex flex-wrap gap-1.5">
+                  {proj.tech?.split(" • ").map((t, tIdx) => (
+                    <span key={t} className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-slate-950 text-sky-400/80 border border-sky-950/40">
+                      {t}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

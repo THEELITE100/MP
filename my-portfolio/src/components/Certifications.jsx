@@ -9,31 +9,35 @@ const certs = [
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="py-24 w-full px-6 border-t border-sky-900/20 bg-slate-900/20 backdrop-blur-sm">
+    <section id="certifications" className="py-32 w-full px-6 border-t border-sky-950/20 bg-slate-950/5">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-12">
-          <div className="h-[1px] w-12 bg-sky-500/50" />
-          <h2 className="text-3xl md:text-4xl font-light tracking-widest text-sky-100 uppercase">Relics of Knowledge</h2>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-4">
-          {certs.map((cert, idx) => (
-            <motion.a
-              key={idx}
-              href={cert.link}
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="p-5 border border-slate-800 rounded-xl hover:bg-slate-800/50 hover:border-sky-500/40 transition-all duration-300 group flex items-center justify-between"
-            >
-              <span className="text-slate-300 group-hover:text-sky-200 transition-colors">{cert.name}</span>
-              <span className="text-sky-500/50 group-hover:text-sky-400">↗</span>
-            </motion.a>
-          ))}
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-[1px] w-12 bg-sky-500/40" />
+            <h2 className="text-2xl md:text-3xl font-display tracking-widest text-sky-100 uppercase">Relics of Knowledge</h2>
+          </div>
+
+          <div className="space-y-4">
+            {certs.map((cert, idx) => (
+              <div key={idx} className="p-5 rounded-lg bg-slate-900/20 border border-slate-800/40 flex items-center gap-4">
+                <div className="h-2 w-2 rounded-full bg-sky-500/40 shrink-0" />
+                <a 
+                  href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-slate-300 text-sm md:text-base font-light tracking-wide hover:text-sky-400 transition-colors duration-200"
+                >
+                  {cert.name}
+                </a>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
