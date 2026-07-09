@@ -25,6 +25,9 @@ const Contact = () => {
               GitHub
             </a>
           </div>
+          <p className="mt-24 text-sm text-slate-600 tracking-widest uppercase">
+          © {new Date().getFullYear()} SP. All rights reserved.
+        </p>
         </motion.div>
       </div>
     </section>
