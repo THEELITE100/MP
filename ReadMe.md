@@ -48,14 +48,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 Navigate to http://localhost:5173/ to see the portfolio running locally.
 
 
-📦 **Deployment**
-This project is fully optimized for immediate deployment on platforms like Vercel, Netlify, or GitHub Pages.
-
-To build the project for production, run:
-
-```bash
-npm run build
-```
+## 🚀 Live
+**https://sumit-parashar.vercel.app/**
 
 ## 📄 License
 This project is licensed under the MIT License.
