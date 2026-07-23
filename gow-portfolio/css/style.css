@@ -1,0 +1,707 @@
+/* ============================================
+   GOD OF WAR RAGNARÖK PORTFOLIO
+   Main Stylesheet - Core Variables & Base
+   ============================================ */
+
+/* CSS Custom Properties - The Color Realms */
+:root {
+  /* Realm Colors */
+  --void-deep: #030508;
+  --void-mid: #0a0e1a;
+  --void-light: #12182b;
+
+  --frost-primary: #64b5f6;
+  --frost-bright: #90caf9;
+  --frost-dim: #42a5f5;
+
+  --gold-primary: #d4af37;
+  --gold-bright: #f4d03f;
+  --gold-dim: #b8941f;
+  --gold-glow: rgba(212, 175, 55, 0.3);
+
+  --ember-primary: #ff6b35;
+  --ember-bright: #ff8a65;
+  --ember-dim: #e64a19;
+
+  --nature-primary: #66bb6a;
+  --nature-bright: #81c784;
+  --nature-dim: #4caf50;
+
+  --royal-primary: #7e57c2;
+  --royal-bright: #9575cd;
+  --royal-dim: #5e35b1;
+
+  --stone-primary: #78909c;
+  --stone-bright: #90a4ae;
+  --stone-dim: #607d8b;
+
+  /* Text Colors */
+  --text-primary: #e8eaf6;
+  --text-secondary: #b0bec5;
+  --text-dim: #78909c;
+  --text-gold: #d4af37;
+
+  /* Typography */
+  --font-display: 'Cinzel', 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 8rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-realm: 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Z-Index Layers */
+  --z-particles: 1;
+  --z-three: 2;
+  --z-bg: 3;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-sindri: 200;
+  --z-transition: 500;
+  --z-loader: 1000;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--void-deep);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection - Gold Rune Style */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: var(--gold-bright);
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* Scrollbar - Nordic Style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dim), var(--gold-primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--gold-primary), var(--gold-bright));
+}
+
+/* ============================================
+   RUNE LOADER
+   ============================================ */
+.rune-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--void-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-loader);
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.rune-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rune-container {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.rune-svg {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--space-lg);
+  animation: runePulse 2s ease-in-out infinite;
+}
+
+.rune-path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: runeDraw 2s ease forwards, runeGlow 2s ease-in-out infinite 2s;
+}
+
+.rune-glow {
+  width: 120px;
+  height: 120px;
+  margin: -120px auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+  animation: glowPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.rune-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold-primary);
+  letter-spacing: 2px;
+  margin-bottom: var(--space-lg);
+  animation: textFade 1s ease forwards 0.5s;
+  opacity: 0;
+}
+
+.rune-progress {
+  width: 200px;
+  height: 2px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 0 auto;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.rune-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold-bright));
+  animation: progressFill 2s ease forwards;
+}
+
+@keyframes runeDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes runePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes runeGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px var(--gold-primary)); }
+  50% { filter: drop-shadow(0 0 20px var(--gold-bright)); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes textFade {
+  to { opacity: 1; }
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}
+
+/* ============================================
+   CANVAS LAYERS
+   ============================================ */
+.particle-canvas,
+.three-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle-canvas {
+  z-index: var(--z-particles);
+}
+
+.three-canvas {
+  z-index: var(--z-three);
+  opacity: 0.6;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.realm-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(3, 5, 8, 0.95) 0%, transparent 100%);
+  backdrop-filter: blur(10px);
+  transform: translateY(-100%);
+  transition: transform var(--transition-medium);
+}
+
+.realm-nav.visible {
+  transform: translateY(0);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nav-rune {
+  font-size: 1.5rem;
+  color: var(--gold-primary);
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+.nav-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+}
+
+.nav-realms {
+  display: flex;
+  list-style: none;
+  gap: var(--space-lg);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-primary);
+  transition: width var(--transition-fast);
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-rune-small {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: var(--space-sm);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--gold-primary);
+  transition: all var(--transition-fast);
+}
+
+/* ============================================
+   REALM CONTAINER & SECTIONS
+   ============================================ */
+.realm-container {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.realm {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-xl);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity var(--transition-realm), visibility var(--transition-realm);
+}
+
+.realm.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.realm-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.realm-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.realm-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.realm-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.realm-icon {
+  display: block;
+  font-size: 3rem;
+  color: var(--gold-primary);
+  text-shadow: 0 0 20px var(--gold-glow);
+  margin-bottom: var(--space-md);
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+.realm-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.realm-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ============================================
+   REALM EXIT DOOR
+   ============================================ */
+.realm-door-exit {
+  position: absolute;
+  top: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.small-door {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  perspective: 600px;
+}
+
+.small-door-left,
+.small-door-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(180deg, #2a1f11 0%, #1a1408 100%);
+  border: 1px solid var(--gold-dim);
+  transition: transform var(--transition-slow);
+}
+
+.small-door-left {
+  left: 0;
+  transform-origin: left center;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.small-door-right {
+  right: 0;
+  transform-origin: right center;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+.small-door:hover .small-door-left {
+  transform: rotateY(-75deg);
+}
+
+.small-door:hover .small-door-right {
+  transform: rotateY(75deg);
+}
+
+.small-door-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  color: var(--gold-primary);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+  text-shadow: 0 0 5px var(--gold-glow);
+}
+
+.small-door:hover .small-door-label {
+  opacity: 1;
+}
+
+/* ============================================
+   REALM TRANSITION
+   ============================================ */
+.realm-transition {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-transition);
+  background: var(--void-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-medium);
+}
+
+.realm-transition.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.transition-runes {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.trans-rune {
+  font-size: 3rem;
+  color: var(--gold-primary);
+  opacity: 0;
+  transform: scale(0);
+  text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.transition-bifrost {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--frost-primary), 
+    var(--gold-primary), 
+    var(--ember-primary), 
+    var(--frost-primary), 
+    transparent
+  );
+  opacity: 0;
+  filter: blur(2px);
+}
+
+/* ============================================
+   SCROLL INDICATOR
+   ============================================ */
+.scroll-indicator {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-rune {
+  font-size: 1.5rem;
+  color: var(--gold-primary);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--gold-primary), transparent);
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.realm-footer {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--void-deep);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.realm-footer p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+
+.footer-rune {
+  color: var(--gold-primary);
+  margin: 0 var(--space-sm);
+}
+
+/* ============================================
+   RESPONSIVE BASE
+   ============================================ */
+@media (max-width: 1024px) {
+  .nav-realms {
+    gap: var(--space-md);
+  }
+
+  .realm {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .realm-nav {
+    padding: var(--space-md);
+  }
+
+  .nav-realms {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(3, 5, 8, 0.98);
+    flex-direction: column;
+    padding: var(--space-lg);
+    gap: var(--space-md);
+    transform: translateY(-150%);
+    transition: transform var(--transition-medium);
+  }
+
+  .nav-realms.open {
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .realm {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-xl: 2rem;
+    --space-2xl: 4rem;
+  }
+
+  .realm-title {
+    letter-spacing: 2px;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.gold-glow {
+  text-shadow: 0 0 10px var(--gold-glow), 0 0 20px var(--gold-glow);
+}
+
+.frost-glow {
+  text-shadow: 0 0 10px rgba(100, 181, 246, 0.3);
+}

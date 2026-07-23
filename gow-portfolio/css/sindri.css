@@ -1,0 +1,507 @@
+/* ============================================
+   GOD OF WAR RAGNARÖK PORTFOLIO
+   Sindri 3D Chatbot Stylesheet
+   ============================================ */
+
+.sindri-container {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  z-index: var(--z-sindri);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-md);
+}
+
+/* ============================================
+   SINDRI TOGGLE / AVATAR
+   ============================================ */
+.sindri-toggle {
+  position: relative;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sindri-avatar {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  transform-style: preserve-3d;
+  animation: sindriFloat 3s ease-in-out infinite;
+}
+
+@keyframes sindriFloat {
+  0%, 100% { transform: translateY(0) rotateY(0deg); }
+  25% { transform: translateY(-5px) rotateY(5deg); }
+  50% { transform: translateY(-10px) rotateY(0deg); }
+  75% { transform: translateY(-5px) rotateY(-5deg); }
+}
+
+/* Sindri Head */
+.sindri-head {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.sindri-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #d4a574 0%, #c4956a 100%);
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: 
+    inset 0 -5px 10px rgba(0,0,0,0.2),
+    0 5px 15px rgba(0,0,0,0.3);
+  transform-style: preserve-3d;
+}
+
+.sindri-eye {
+  position: absolute;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background: #2c1810;
+  border-radius: 50%;
+  animation: sindriBlink 4s ease-in-out infinite;
+}
+
+.sindri-eye.left { left: 12px; }
+.sindri-eye.right { right: 12px; }
+
+@keyframes sindriBlink {
+  0%, 96%, 100% { transform: scaleY(1); }
+  98% { transform: scaleY(0.1); }
+}
+
+.sindri-nose {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 8px;
+  background: #b8956a;
+  border-radius: 50%;
+}
+
+.sindri-beard {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+}
+
+.beard-strand {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: linear-gradient(180deg, #8b7355, #6b5344);
+  border-radius: 2px;
+}
+
+.beard-strand:nth-child(1) { left: 10px; transform: rotate(-10deg); }
+.beard-strand:nth-child(2) { left: 18px; height: 18px; }
+.beard-strand:nth-child(3) { left: 26px; transform: rotate(10deg); }
+
+/* Sindri Hat */
+.sindri-hat {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(180deg, #4a6741, #3d5436);
+  border-radius: 50% 50% 0 0;
+}
+
+.hat-point {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 20px solid #4a6741;
+}
+
+/* Sindri Body */
+.sindri-body {
+  position: relative;
+  width: 40px;
+  height: 25px;
+  margin: -5px auto 0;
+  background: linear-gradient(180deg, #5c4033, #4a3428);
+  border-radius: 10px 10px 20px 20px;
+}
+
+.sindri-apron {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 18px;
+  background: linear-gradient(180deg, #8b4513, #6b3410);
+  border-radius: 3px 3px 10px 10px;
+}
+
+.sindri-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+  animation: sindriGlow 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sindriGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Ping Notification */
+.sindri-ping {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--ember-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--ember-primary);
+  animation: pingPulse 2s ease-in-out infinite;
+}
+
+@keyframes pingPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* ============================================
+   SINDRI CHAT INTERFACE
+   ============================================ */
+.sindri-chat {
+  position: absolute;
+  bottom: 90px;
+  right: 0;
+  width: 380px;
+  max-height: 500px;
+  background: rgba(10, 14, 26, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(212, 175, 55, 0.1);
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-medium);
+  transform-origin: bottom right;
+}
+
+.sindri-chat.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(212, 175, 55, 0.05);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.chat-avatar-small {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.sindri-head-mini {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sindri-face-mini {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #d4a574, #c4956a);
+  border-radius: 50%;
+  position: relative;
+}
+
+.sindri-eye-mini {
+  position: absolute;
+  top: 35%;
+  width: 5px;
+  height: 5px;
+  background: #2c1810;
+  border-radius: 50%;
+}
+
+.sindri-eye-mini.left { left: 25%; }
+.sindri-eye-mini.right { right: 25%; }
+
+.chat-title {
+  flex: 1;
+}
+
+.chat-title h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold-primary);
+  letter-spacing: 1px;
+}
+
+.chat-status {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+.chat-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: var(--gold-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.chat-close:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Chat Messages */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-height: 300px;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 2px;
+}
+
+.message {
+  max-width: 85%;
+  padding: var(--space-md);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  animation: messageAppear 0.3s ease forwards;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sindri-message {
+  align-self: flex-start;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  color: var(--text-secondary);
+  border-bottom-left-radius: 4px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: rgba(100, 181, 246, 0.1);
+  border: 1px solid rgba(100, 181, 246, 0.2);
+  color: var(--text-primary);
+  border-bottom-right-radius: 4px;
+}
+
+.message.typing {
+  display: flex;
+  gap: 4px;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-10px); }
+}
+
+/* Chat Input Area */
+.chat-input-area {
+  padding: var(--space-md);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.suggestion-btn {
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 20px;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.suggestion-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+.chat-input-wrapper {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.chat-input-wrapper input {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(10, 14, 26, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 25px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.chat-input-wrapper input:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.chat-input-wrapper input::placeholder {
+  color: var(--text-dim);
+}
+
+.chat-send-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold-primary));
+  border: none;
+  color: var(--void-deep);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.chat-send-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+/* ============================================
+   RESPONSIVE SINDRI
+   ============================================ */
+@media (max-width: 768px) {
+  .sindri-container {
+    bottom: var(--space-md);
+    right: var(--space-md);
+  }
+
+  .sindri-chat {
+    width: calc(100vw - 40px);
+    max-width: 350px;
+    right: -10px;
+  }
+
+  .sindri-toggle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sindri-avatar {
+    width: 55px;
+    height: 55px;
+  }
+
+  .sindri-head {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sindri-body {
+    width: 32px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sindri-chat {
+    position: fixed;
+    bottom: 80px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+  }
+}
