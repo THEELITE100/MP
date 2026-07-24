@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
 
 const projectData = [
+  // { 
+  //   title: "Focus", 
+  //   date: "June 2026 – July 2026", 
+  //   tech: "React.js • Node.js • Express.js • MongoDB • Tailwind CSS • Socket.IO • Redux Toolkit", 
+  //   points: [ 
+  //     "Engineered a full-stack hyperlocal freelance marketplace featuring multi-role authentication, milestone-based gig management, and atomic proposal acceptances.", 
+  //     "Integrated Socket.IO for instant real-time messaging and notifications alongside Stripe API and Stripe Connect for secure milestone escrow funding, automated payouts, and dispute refunds.", 
+  //     "Developed a hybrid job matching engine pairing deterministic rule-based algorithms with optional dynamic AI transformer embeddings, backed by a recency-weighted reputation and review fraud detection system.",  
+  //   ] 
+  // },
   { 
     title: "Focus", 
     date: "June 2026 – July 2026", 
