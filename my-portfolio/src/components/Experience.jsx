@@ -4,7 +4,7 @@ const experiences = [
   {
     role: "Full Stack Developer Intern",
     company: "Nayoda",
-    duration: "June 2026 - Present",
+    duration: "June 2026 - Jul 2026",
     bullets: [
       "Engineered real world features and executed critical tasks across full stack production environments.",
       "Gained deep practical experience aligning development workflows with modern industry practices.",
