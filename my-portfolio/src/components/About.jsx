@@ -48,7 +48,7 @@ const About = () => {
           
           <div className="flex justify-center">
             <a 
-              href="https://drive.google.com/file/d/1wI_rEqQ1xKAO_tFZ_dToxTfl96hiDhvE/view" 
+              href="https://drive.google.com/file/d/1qTNcTpB93tqo2CKJoiD0BCt2lNfR6EAA/view" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-slate-950 border border-sky-900/40 rounded-full overflow-hidden flex items-center gap-3 transition-all duration-300 hover:border-sky-400"
