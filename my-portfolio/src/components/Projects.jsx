@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const projectData = [
   // { 
-  //   title: "Focus", 
+  //   title: "Skill Sphere", 
   //   date: "June 2026 – July 2026", 
   //   tech: "React.js • Node.js • Express.js • MongoDB • Tailwind CSS • Socket.IO • Redux Toolkit", 
   //   points: [ 
@@ -24,10 +24,10 @@ const projectData = [
   {
     title: "AEO Diagnostic Engine",
     date: "April 2026 – May 2026",
-    tech: "Python • Selenium • Groq API • Flask • React • Docker",
+    tech: "Python • Selenium • Groq API • LLMs • Flask • React • Framer Motion • Docker",
     points: [
-      "Developed a web application simulating modern AI Search Engines to check brand visibility and recommendation performance.",
-      "Built a highly resilient backend using Python and custom headless browser automation for secure live product imagery extraction.",
+      "Developed a web application simulating modern AI Search Engines to check brand visibility and recommendation performance using LLM driven pipelines.",
+      "Built a resilient backend using Python and custom headless browser automation for secure live product imagery extraction, integrated with the Groq API for advanced text analysis and generation.",
       "Enabled automated diagnostics to calculate brand win rates and identify competitors dominating AI recommendation results."
     ]
   },
