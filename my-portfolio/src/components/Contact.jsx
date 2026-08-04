@@ -19,7 +19,7 @@ const Contact = () => {
               parasharsumit730@gmail.com
             </a>
             <a href="https://www.linkedin.com/in/sumit-parashar-30164228a/" target="_blank" rel="noreferrer" className="px-8 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-sky-500/50 hover:text-sky-200 transition-all">
-              LinkedIn
+              Linkedin
             </a>
             <a href="https://github.com/THEELITE100" target="_blank" rel="noreferrer" className="px-8 py-3 rounded-full bg-slate-800 border border-slate-700 hover:border-sky-500/50 hover:text-sky-200 transition-all">
               GitHub
