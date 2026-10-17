@@ -1,16 +1,36 @@
 import { motion } from 'framer-motion';
 
 const projectData = [
-  // { 
-  //   title: "Skill Sphere", 
-  //   date: "June 2026 – July 2026", 
-  //   tech: "React.js • Node.js • Express.js • MongoDB • Tailwind CSS • Socket.IO • Redux Toolkit", 
-  //   points: [ 
-  //     "Engineered a full-stack hyperlocal freelance marketplace featuring multi-role authentication, milestone-based gig management, and atomic proposal acceptances.", 
-  //     "Integrated Socket.IO for instant real-time messaging and notifications alongside Stripe API and Stripe Connect for secure milestone escrow funding, automated payouts, and dispute refunds.", 
-  //     "Developed a hybrid job matching engine pairing deterministic rule-based algorithms with optional dynamic AI transformer embeddings, backed by a recency-weighted reputation and review fraud detection system.",  
-  //   ] 
-  // },
+  { 
+    title: "Dr. Maya Reynolds, PsyD | Therapy Practice Website",
+    date: "Sept 2026 – Oct 2026",
+    tech: "Next.js 16 • React 19 • TypeScript • Tailwind CSS 4 • Lucide React",
+    points: [
+      "Developed a fully responsive, SEO optimized therapy practice website featuring accessible navigation, service listings, therapist biography, office gallery, interactive FAQ, and booking call-to-actions.",
+      "Implemented local SEO with metadata optimization, canonical URLs, Open Graph tags, and JSON-LD structured data for LocalBusiness and FAQPage, enhancing search visibility for therapy services in Santa Monica.",
+      "Optimized performance and accessibility using Next.js image optimization, static prerendering, self-hosted fonts, semantic HTML, keyboard-accessible navigation, reduced-motion support, and centralized TypeScript-based content management."
+    ] 
+  },
+  { 
+    title: "SecureID – IAM Authentication & Registration System",
+    date: "Aug 2026 – Sept 2026",
+    tech: "React.js • Node.js • Express.js • MongoDB • JWT • bcrypt • Helmet.js",
+    points: [
+      "Engineered a secure Identity and Access Management system featuring validated user registration, email/SMS OTP verification, password strength analysis, and multi-factor authentication.",
+      "Implemented server-side session management with secure HttpOnly cookies, configurable session expiry, bcrypt password hashing, account lockout protection, and single-use OTPs with expiration and rate-limiting controls.",
+      "Developed JWT-based authentication with short-lived access tokens, Bearer token validation, and protected API endpoints, incorporating Helmet.js security headers, Content Security Policy, and input validation to strengthen application security."
+    ] 
+  },
+  { 
+    title: "Skill Sphere", 
+    date: "June 2026 – July 2026", 
+    tech: "React.js • Node.js • Express.js • MongoDB • Tailwind CSS • Socket.IO • Redux Toolkit", 
+    points: [ 
+      "Engineered a full-stack hyperlocal freelance marketplace featuring multi-role authentication, milestone-based gig management, and atomic proposal acceptances.", 
+      "Integrated Socket.IO for instant real-time messaging and notifications alongside Stripe API and Stripe Connect for secure milestone escrow funding, automated payouts, and dispute refunds.", 
+      "Developed a hybrid job matching engine pairing deterministic rule-based algorithms with optional dynamic AI transformer embeddings, backed by a recency-weighted reputation and review fraud detection system.",  
+    ] 
+  },
   { 
     title: "Focus", 
     date: "June 2026 – July 2026", 
