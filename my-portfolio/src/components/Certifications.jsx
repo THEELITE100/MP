@@ -4,7 +4,8 @@ const certs = [
   { name: "Next-Gen Workplace Automation with GenAI", link: "https://coursera.org/verify/specialization/22AXYXLODCPS" },
   { name: "Getting Started with Accelerated Computing in Modern CUDA C++", link: "https://learn.nvidia.com/certificates?id=Y56xbAjBT5qL_OM1h5aKZg" },
   { name: "Improving Deep Neural Networks", link: "https://coursera.org/verify/KDL5GO4VH1UZ" },
-  { name: "Database and SQL for Data Science with Python", link: "https://coursera.org/verify/7SFS53T0KIU1" }
+  { name: "Database and SQL for Data Science with Python", link: "https://coursera.org/verify/7SFS53T0KIU1" },
+  { name: "Programming with Generative AI", link: "https://drive.google.com/file/d/119vLKOuInvhg-ck6It2zBBpKAmPhpo1Z/view" }
 ];
 
 const Certifications = () => {
